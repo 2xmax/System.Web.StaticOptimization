@@ -1,0 +1,9 @@
+*.suo
+*.user
+*.Cache
+/System.Web.StaticOptimization.Mvc/bin
+/System.Web.StaticOptimization.Mvc/obj
+/System.Web.StaticOptimization/bin
+/System.Web.StaticOptimization/obj
+/System.Web.StaticOptimization.Build/bin
+/System.Web.StaticOptimization.Build/obj
