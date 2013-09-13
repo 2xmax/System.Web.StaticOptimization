@@ -48,28 +48,32 @@ namespace System.Web.StaticOptimization.Mvc
 
         private static IEnumerable<string> GetScripts(string bundlePath)
         {
-#if DEBUG
+            if (BundleTable.EnableOptimizations)
+            {
+                return new[] { bundlePath };
+            }
             if (BundleTable.Bundles == null)
             {
                 throw new BundleConfigurationException("You need to init the collection first");
             }
-#endif
             var lowered = bundlePath.ToLowerInvariant();
             var bundles = BundleTable.Bundles.Scripts.Where(p => p.Root.ToLowerInvariant() == lowered);
-            return BundleTable.EnableOptimizations ? new[] { bundlePath } : bundles.SelectMany(p => p.Childs);
+            return bundles.SelectMany(p => p.Childs);
         }
 
         private static IEnumerable<string> GetStyles(string bundlePath)
         {
-#if DEBUG
+            if (BundleTable.EnableOptimizations)
+            {
+                return new[] { bundlePath };
+            }
             if (BundleTable.Bundles == null)
             {
                 throw new BundleConfigurationException("You need to init the collection first");
             }
-#endif
             var lowered = bundlePath.ToLowerInvariant();
             var bundles = BundleTable.Bundles.Styles.Where(p => p.Root.ToLowerInvariant() == lowered);
-            return BundleTable.EnableOptimizations ? new[] { bundlePath } : bundles.SelectMany(p => p.Childs);
+            return bundles.SelectMany(p => p.Childs);
         }
 
         private static string GetVirtualPath(string path)
