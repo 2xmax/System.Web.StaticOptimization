@@ -56,7 +56,7 @@ namespace System.Web.StaticOptimization.Mvc
 #endif
             var lowered = bundlePath.ToLowerInvariant();
             var bundles = BundleTable.Bundles.Scripts.Where(p => p.Root.ToLowerInvariant() == lowered);
-            return BundleTable.EnableOptimizations ? bundles.Select(p => p.Root) : bundles.SelectMany(p => p.Childs);
+            return BundleTable.EnableOptimizations ? new[] { bundlePath } : bundles.SelectMany(p => p.Childs);
         }
 
         private static IEnumerable<string> GetStyles(string bundlePath)
@@ -69,7 +69,7 @@ namespace System.Web.StaticOptimization.Mvc
 #endif
             var lowered = bundlePath.ToLowerInvariant();
             var bundles = BundleTable.Bundles.Styles.Where(p => p.Root.ToLowerInvariant() == lowered);
-            return BundleTable.EnableOptimizations ? bundles.Select(p => p.Root) : bundles.SelectMany(p => p.Childs);
+            return BundleTable.EnableOptimizations ? new[] { bundlePath } : bundles.SelectMany(p => p.Childs);
         }
 
         private static string GetVirtualPath(string path)
