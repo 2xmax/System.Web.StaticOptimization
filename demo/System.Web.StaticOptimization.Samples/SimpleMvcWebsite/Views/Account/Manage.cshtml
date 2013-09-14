@@ -12,14 +12,7 @@
 
 <p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
 
-@if (ViewBag.HasLocalPassword)
-{
-    @Html.Partial("_ChangePasswordPartial")
-}
-else
-{ 
-    @Html.Partial("_SetPasswordPartial")
-}
+@Html.Partial("_ChangePasswordPartial")
 
 @section Scripts {
     @Html.Script("~/bundles/jqueryval.js")
