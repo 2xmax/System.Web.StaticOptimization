@@ -3,11 +3,10 @@ using System.Web.Mvc;
 using System.Web.Security;
 using SimpleMvcWebsite.Filters;
 using SimpleMvcWebsite.Models;
+using WebMatrix.WebData;
 
 namespace SimpleMvcWebsite.Controllers
 {
-    using WebMatrix.WebData;
-
     [Authorize]
     [InitializeSimpleMembership]
     public class AccountController : Controller

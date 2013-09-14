@@ -4,11 +4,10 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using SimpleMvcWebsite.Models;
+using WebMatrix.WebData;
 
 namespace SimpleMvcWebsite.Filters
 {
-    using WebMatrix.WebData;
-
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute
     {
