@@ -28,7 +28,7 @@ namespace System.Web.StaticOptimization.Mvc
             return new MvcHtmlString(sb.ToString());
         }
 
-        public static string Style(this HtmlHelper helper, string path)
+        public static MvcHtmlString Style(this HtmlHelper helper, string path)
         {
             var paths = GetStyles(path).Select(GetVirtualPath).ToList();
 #if DEBUG
@@ -40,10 +40,10 @@ namespace System.Web.StaticOptimization.Mvc
             var sb = new StringBuilder();
             foreach (var p in paths)
             {
-                sb.AppendFormat(" <link href=\"{0}\" rel=\"stylesheet\"/>", p);
+                sb.AppendFormat("<link href=\"{0}\" rel=\"stylesheet\"/>", p);
                 sb.AppendLine();
             }
-            return sb.ToString();
+            return new MvcHtmlString(sb.ToString());
         }
 
         private static IEnumerable<string> GetScripts(string bundlePath)

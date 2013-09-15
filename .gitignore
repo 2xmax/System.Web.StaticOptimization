@@ -7,3 +7,10 @@
 /System.Web.StaticOptimization/obj
 /System.Web.StaticOptimization.Build/bin
 /System.Web.StaticOptimization.Build/obj
+bin
+/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/obj
+/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/*.user
+
+/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.mdf
+
+/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.ldf
