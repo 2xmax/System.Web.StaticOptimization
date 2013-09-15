@@ -239,10 +239,16 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
+  <PropertyGroup>
+    <StaticOptimizationLib>$(MSBuildProjectDirectory)\..\packages\System.Web.StaticOptimization\System.Web.StaticOptimization.Build.dll</StaticOptimizationLib>
+  </PropertyGroup>
+  <UsingTask AssemblyFile="$(StaticOptimizationLib)" TaskName="System.Web.StaticOptimization.BundleGeneratorTask" />
+  <UsingTask AssemblyFile="$(StaticOptimizationLib)" TaskName="System.Web.StaticOptimization.HtmlPreprocessingTask" />
+  <UsingTask AssemblyFile="$(StaticOptimizationLib)" TaskName="System.Web.StaticOptimization.HtmlMinifierTask" />
   <Target Name="AfterBuild">
-  </Target> -->
+    <PropertyGroup>
+      <BundleConfig>$(MSBuildProjectDirectory)\bundles.config</BundleConfig>
+    </PropertyGroup>
+    <BundleGeneratorTask BundleConfig="$(BundleConfig)" />
+  </Target>
 </Project>

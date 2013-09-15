@@ -14,3 +14,4 @@ bin
 /demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.mdf
 
 /demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.ldf
+/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/bundles
