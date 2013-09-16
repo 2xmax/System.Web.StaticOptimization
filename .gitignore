@@ -9,8 +9,8 @@
 /src/System.Web.StaticOptimization.Build/obj
 bin
 obj
-/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/obj
-/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.mdf
-/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/App_Data/*.ldf
-/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/bundles
-/demo/System.Web.StaticOptimization.Samples/SimpleMvcWebsite/Content/css.css
+/demo/SimpleMvcWebsite/obj
+/demo/SimpleMvcWebsite/App_Data/*.mdf
+/demo/SimpleMvcWebsite/App_Data/*.ldf
+/demo/SimpleMvcWebsite/bundles
+/demo/SimpleMvcWebsite/Content/css.css
