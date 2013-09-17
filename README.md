@@ -1,7 +1,7 @@
 System.Web.StaticOptimization
 =============================
 
-A .NET MSBuild tasks package contains utilities for JS/CSS/HTML minification, HTML preprocessing
+The MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses [WebGreace config]((https://www.nuget.org/packages/System.Web.StaticOptimization/) for bundles definition.
 
 Quick start for ASP.NET MVC developers
 ======================================
@@ -11,7 +11,7 @@ If you have no plans to use static HTML you can look for [alternative](http://yu
 
 1. Install [System.Web.StaticOptimization package](https://www.nuget.org/packages/System.Web.StaticOptimization/) from Nuget (if you have probs, here is the [help](https://nuget.org/packages/NLapack/1.0.14/Download)).
 2. Add reference to System.Web.StaticOptimization.dll, System.Web.StaticOptimization.Mvc.dll (will be automated later in special NuGet package for ASP.NET MVC developers)
-2. Add following initialization code in Global.asax.cs:
+3. Add following initialization code in Global.asax.cs:
 
 
 ```csharp
@@ -23,10 +23,33 @@ If you have no plans to use static HTML you can look for [alternative](http://yu
 #endif
         }
 ```
-3. Edit bundles.config file by describing your JS and CSS bundles
+4. Edit bundles.config file by describing your JS and CSS bundles
 
-How it works
-============
+How to use HTML preprocessing
+=============================
+
+For example, we have {filename}.template.html for template files and we want to see {filename}.html preprocessed:
+```xml
+  <!--Task import-->
+  <UsingTask AssemblyFile="$(StaticOptimizationLib)" TaskName="System.Web.StaticOptimization.HtmlMinifierTask" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <!--output HTML replace rules goes here. This example means that it will create
+      the output file with the same name as input, but with replaced '.template.html'
+      occurrence to '.html'. E.g.: index.template.html -> index.html -->
+      <OutputFileNameReplaceRule Include=".template.html">
+        <ReplaceBy>.html</ReplaceBy>
+      </OutputFileNameReplaceRule>
+    </ItemGroup>
+    <PropertyGroup>
+      <BundleConfig>$(MSBuildProjectDirectory)\bundles.config</BundleConfig>
+    </PropertyGroup>
+    <!-- Process all *template.html files with concrete bundles config and using release mode for rendering of bundles-->
+    <HtmlPreprocessingTask OutputFileNameReplaceRules="@(OutputFileNameReplaceRule)" InputFile="*template.html" BundleConfig="$(BundleConfig)" IsRelease="True" />
+    <!--Here you can place html minificator (template.html is ignored by default -->
+    <!--<HtmlMinifierTask InputDir="$(MSBuildProjectDirectory)" />-->
+  </Target>
+```  
 
 
 
@@ -34,3 +57,4 @@ Plans
 =====
 1. Prepare demo for SPA (using HTML preprocessing engine)
 2. Automate Global.asax generation
+3. Detailed configuration for each task
