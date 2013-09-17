@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>System.Web.StaticOptimization</id>
+    <version>1.0.4</version>
+    <title>System.Web.StaticOptimization</title>
+    <authors>Maxim Maximov</authors>
+    <owners>Maxim Maximov</owners>
+    <projectUrl>https://github.com/2xmax/System.Web.StaticOptimization</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses WebGreace config for bundles definition.</description>
+    <releaseNotes>initial deploy</releaseNotes>
+    <copyright />
+    <language />
+    <tags>bundles optmization webgreace minification</tags>
+  </metadata>
+</package>
