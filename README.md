@@ -9,7 +9,7 @@ Quick start for ASP.NET MVC developers
 Manual for developers who use cshtml, i.e. not static HTML. 
 If you have no plans to use static HTML you can look for [alternative](http://yuicompressor.codeplex.com/), but IMHO the definition of the package is less convienment that [WebGrease] (http://webgrease.codeplex.com/wikipage?title=WebGrease%20configuration%20file)
 
-1. Install [System.Web.StaticOptimization package](https://www.nuget.org/packages/System.Web.StaticOptimization/) from Nuget (if you have probs, here is the [help](https://nuget.org/packages/NLapack/1.0.14/Download)).
+1. Install [System.Web.StaticOptimization package](https://www.nuget.org/packages/System.Web.StaticOptimization/) from Nuget (if you have probs, here is the [help](https://www.nuget.org/packages/System.Web.StaticOptimization/Download)).
 2. Add reference to System.Web.StaticOptimization.dll, System.Web.StaticOptimization.Mvc.dll (will be automated later in special NuGet package for ASP.NET MVC developers)
 3. Add following initialization code in Global.asax.cs:
 
@@ -24,6 +24,10 @@ If you have no plans to use static HTML you can look for [alternative](http://yu
         }
 ```
 4. Edit bundles.config file by describing your JS and CSS bundles
+5. Rebuild(F6);)
+
+How it works? The package adds MSBuild post build tasks in your csproj. Simple and Easy.
+Have problems? Check out my demos.
 
 How to use HTML preprocessing
 =============================
