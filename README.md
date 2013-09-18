@@ -24,7 +24,7 @@ If you have no plans to use static HTML you can look for [alternative](http://yu
         }
 ```
 4. Edit bundles.config file by describing your JS and CSS bundles
-5. Rebuild(F6);)
+5. Fasten the belts and press F6 (rebuild) ;)
 
 How it works? The package adds MSBuild post build tasks in your csproj. Simple and Easy.
 Have problems? Check out my demos.
@@ -88,4 +88,4 @@ Plans
 =====
 1. Prepare demo for SPA (using HTML preprocessing engine)
 2. Automate Global.asax generation
-3. Detailed configuration for each task
+3. Detailed documentation for extra input params of each task
