@@ -29,6 +29,32 @@ How to use HTML preprocessing
 =============================
 
 For example, we have {filename}.template.html for template files and we want to see {filename}.html preprocessed:
+
+index.temlate.html:
+
+```html
+<!DOCTYPE html>
+<html ng-app="homepage">
+<head>
+    <!--style:~/Content/css/common.css-->
+</head>
+<body>
+    <!--template:Views/Shared/_Header.html-->
+    <div class="container-fluid">
+        <error></error>
+        <busyindicator></busyindicator>
+        <div ng-view jq-show-effect="!(isLoading || isError)"></div>
+    </div>
+    <!--template:Views/Shared/_Settings.html-->
+    <!--script:~/bundles/common.js-->
+</body>
+</html>
+```  
+
+We expect to generate index.html with substitution of JS, CSS bundles and html templates.
+
+Let we write in csproj or your external MSBuild file:
+
 ```xml
   <!--Task import-->
   <UsingTask AssemblyFile="$(StaticOptimizationLib)" TaskName="System.Web.StaticOptimization.HtmlMinifierTask" />
@@ -51,6 +77,7 @@ For example, we have {filename}.template.html for template files and we want to 
   </Target>
 ```  
 
+Press F6;)
 
 
 Plans
