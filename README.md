@@ -48,13 +48,12 @@ index.template.html:
     <!--style:~/Content/css/common.css-->
 </head>
 <body>
-    <!--template:Views/Shared/_Header.html-->
     <div class="container-fluid">
         <error></error>
         <busyindicator></busyindicator>
         <div ng-view jq-show-effect="!(isLoading || isError)"></div>
     </div>
-    <!--template:Views/Shared/_Settings.html-->
+    <!--template:Views/Shared/templates.html-->
     <!--script:~/bundles/common.js-->
 </body>
 </html>
