@@ -55,6 +55,27 @@ index.template.html:
 </html>
 ```  
 
+bundles.config:
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<WebGrease>
+  <CssFileSet name="~/Content/css/common.css">
+    <Input>~/Content/css/bootstrap.css</Input>
+    <!--+ over 9000 styles
+    ...
+    -->
+  </CssFileSet>
+  <JsFileSet name="~/bundles/common.js">
+    <Input>~/Scripts/libs/jquery-1.9.1.js</Input>
+    <!-- + 100500 scripts
+    ...
+    -->
+  </JsFileSet>
+</WebGrease>
+
+```
+
 We expect to generate index.html with substitution of JS, CSS bundles and html templates.
 
 Let we write in csproj or your external MSBuild file:
