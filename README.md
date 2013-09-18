@@ -1,7 +1,7 @@
 System.Web.StaticOptimization
 =============================
 
-The MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses [WebGreace config]((https://www.nuget.org/packages/System.Web.StaticOptimization/) for bundles definition.
+The MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses [WebGreace config](https://www.nuget.org/packages/System.Web.StaticOptimization/) for bundles definition.
 
 Dependencies:
 
