@@ -5,7 +5,7 @@ The MSBuild tasks package contains utilities for JS, CSS and HTML minification w
 
 Dependencies:
 
-1. Microsoft Ajax for HTML and CSS minification.
+1. Microsoft Ajax for JS and CSS minification.
 2. [Zeta HTML Compressor](http://blog.magerquark.de/c-port-of-googles-htmlcompressor-library/) - a .NET Port of [Google's HTML compresor](https://code.google.com/p/htmlcompressor/)
 
 Quick start for ASP.NET MVC developers
