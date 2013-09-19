@@ -1,7 +1,12 @@
 System.Web.StaticOptimization
 =============================
 
-The MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses [WebGreace config]((https://www.nuget.org/packages/System.Web.StaticOptimization/) for bundles definition.
+The MSBuild tasks package contains utilities for JS, CSS and HTML minification without server-side participation in release, HTML preprocessing. It uses [WebGreace config](https://www.nuget.org/packages/System.Web.StaticOptimization/) for bundles definition.
+
+Dependencies:
+
+1. [Microsoft Ajax](http://ajaxmin.codeplex.com/) for JS and CSS minification.
+2. [Zeta HTML Compressor](http://blog.magerquark.de/c-port-of-googles-htmlcompressor-library/) - a .NET Port of [Google's HTML compresor](https://code.google.com/p/htmlcompressor/)
 
 Quick start for ASP.NET MVC developers
 ======================================
@@ -43,13 +48,12 @@ index.template.html:
     <!--style:~/Content/css/common.css-->
 </head>
 <body>
-    <!--template:Views/Shared/_Header.html-->
     <div class="container-fluid">
         <error></error>
         <busyindicator></busyindicator>
         <div ng-view jq-show-effect="!(isLoading || isError)"></div>
     </div>
-    <!--template:Views/Shared/_Settings.html-->
+    <!--template:Views/Shared/templates.html-->
     <!--script:~/bundles/common.js-->
 </body>
 </html>
