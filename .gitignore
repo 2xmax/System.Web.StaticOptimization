@@ -14,3 +14,7 @@ obj
 /demo/SimpleMvcWebsite/App_Data/*.ldf
 /demo/SimpleMvcWebsite/bundles
 /demo/SimpleMvcWebsite/Content/css.css
+
+/demo/SimpleDurandalSpa/bundles
+
+/demo/SimpleDurandalSpa/Content/css.css

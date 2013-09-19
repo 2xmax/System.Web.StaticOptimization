@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.20617.1 PREVIEW
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMvcWebsite", "SimpleMvcWebsite\SimpleMvcWebsite.csproj", "{DFC3376F-12CB-4E59-8485-D72237A289D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDurandalSpa", "SimpleDurandalSpa\SimpleDurandalSpa.csproj", "{70DCEC67-E2E8-48FE-9576-CFAEBA246772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFC3376F-12CB-4E59-8485-D72237A289D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC3376F-12CB-4E59-8485-D72237A289D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC3376F-12CB-4E59-8485-D72237A289D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DCEC67-E2E8-48FE-9576-CFAEBA246772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DCEC67-E2E8-48FE-9576-CFAEBA246772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DCEC67-E2E8-48FE-9576-CFAEBA246772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DCEC67-E2E8-48FE-9576-CFAEBA246772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
