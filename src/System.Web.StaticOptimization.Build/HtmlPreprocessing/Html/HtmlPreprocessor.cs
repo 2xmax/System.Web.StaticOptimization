@@ -20,6 +20,10 @@ namespace System.Web.StaticOptimization.HtmlPreprocessing.Html
 
         public void Process(FileInfo input, FileInfo output)
         {
+            if (output.Directory != null)
+            {
+                output.Directory.Create();
+            }
             using (var inputReader = new StreamReader(File.OpenRead(input.FullName)))
             {
                 using (var outputWriter = new StreamWriter(output.FullName))

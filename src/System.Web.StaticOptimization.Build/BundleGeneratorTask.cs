@@ -37,9 +37,7 @@ namespace System.Web.StaticOptimization
             foreach (var bundle in bundles.Scripts)
             {
                 var filesToMin = bundle.Childs.Select(p => GetAbsPath(RootDir, p));
-                string compiles = scriptCompiler.Compile(filesToMin);
-                string fileToWtite = GetAbsPath(RootDir, bundle.Root);
-                File.WriteAllText(fileToWtite, compiles);
+                WriteAllText(scriptCompiler.Compile(filesToMin), GetAbsPath(RootDir, bundle.Root));
             }
 
             IStyleBundleCompiler styleCompiler = new MicrosoftAjaxCssBundleCompiler();
@@ -47,11 +45,19 @@ namespace System.Web.StaticOptimization
             foreach (var bundle in bundles.Styles)
             {
                 var filesToMin = bundle.Childs.Select(p => GetAbsPath(RootDir, p));
-                string compiles = styleCompiler.Compile(filesToMin);
-                string fileToWtite = GetAbsPath(RootDir, bundle.Root);
-                File.WriteAllText(fileToWtite, compiles);
+                WriteAllText(styleCompiler.Compile(filesToMin), GetAbsPath(RootDir, bundle.Root));
             }
             return true;
+        }
+
+        private static void WriteAllText(string content, string fileToWtite)
+        {
+            var directory = new FileInfo(fileToWtite).Directory;
+            if (directory != null)
+            {
+                directory.Create();
+            }
+            File.WriteAllText(fileToWtite, content);
         }
 
         private static string GetAbsPath(string rootDir, string relativePath)
