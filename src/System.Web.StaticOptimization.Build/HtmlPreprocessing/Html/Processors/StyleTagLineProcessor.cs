@@ -13,7 +13,7 @@ namespace System.Web.StaticOptimization.HtmlPreprocessing.Html.Processors
 
         protected override string GetContent(string command)
         {
-            var scripts = BundleContentResolver.GetStyles(command);
+            var scripts = TemplateContentResolver.Instance.GetStyles(command);
             var sb = new StringBuilder();
             foreach (string script in scripts)
             {

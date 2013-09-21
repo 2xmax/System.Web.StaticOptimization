@@ -63,10 +63,9 @@
     <Compile Include="Bundles\Compilers\Script\MicrosoftAjaxScriptBundleCompiler.cs" />
     <Compile Include="Bundles\BundleConfigurationException.cs" />
     <Compile Include="HtmlMinifierTask.cs" />
-    <Compile Include="HtmlPreprocessing\Configuration.cs" />
     <Compile Include="HtmlPreprocessing\HtmlPreprocessorException.cs" />
     <Compile Include="HtmlPreprocessingTask.cs" />
-    <Compile Include="HtmlPreprocessing\BundleContentResolver.cs" />
+    <Compile Include="HtmlPreprocessing\TemplateContentResolver.cs" />
     <Compile Include="HtmlPreprocessing\Html\HtmlPreprocessor.cs" />
     <Compile Include="HtmlPreprocessing\Html\Processors\ILineProcessor.cs" />
     <Compile Include="HtmlPreprocessing\Html\Processors\ScriptTagLineProcessor.cs" />

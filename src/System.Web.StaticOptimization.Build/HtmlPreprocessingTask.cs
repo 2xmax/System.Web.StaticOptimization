@@ -55,7 +55,7 @@ namespace System.Web.StaticOptimization
             {
                 RootDir = BuildEngine.GetProjectDir();
             }
-            HtmlPreprocessing.Configuration.Init(IsRelease, BundleConfig, RootDir);
+            TemplateContentResolver.Init(BundleConfig, RootDir, IsRelease);
             var html = new HtmlPreprocessor();
 
             var replaceRules = OutputFileNameReplaceRules.Select(p =>

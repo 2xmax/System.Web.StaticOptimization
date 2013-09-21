@@ -11,7 +11,7 @@
 
         protected override string GetContent(string command)
         {
-            return BundleContentResolver.GetTemplate(command);
+            return TemplateContentResolver.Instance.GetTemplate(command);
         }
     }
 }
